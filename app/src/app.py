@@ -2,6 +2,10 @@ import streamlit as st
 import numpy as np
 from keras.models import load_model
 from keras.losses import mean_squared_error as mse
+import os
+
+script_dir = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(script_dir, "lstm_model.h5")
 
 # Set up the title and description
 st.title("💹 INR Price Prediction App")
@@ -24,7 +28,7 @@ with col5: price5 = st.number_input("Price 5", value=86.63)
 if st.button("Predict Next Closing Price"):
     try:
         # Load the LSTM model
-        model = load_model("lstm_model.h5", custom_objects={"mse": mse})
+        model = load_model(model_path, custom_objects={"mse": mse})
 
         # Prepare the input
         input_data = np.array([[price1, price2, price3, price4, price5]])
