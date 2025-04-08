@@ -18,11 +18,11 @@ Predict the next **USD to INR** exchange closing price based on recent trends (2
 # User inputs for the last 5 closing prices
 st.subheader("Enter Last 5 Closing Prices (USD to INR)")
 col1, col2, col3, col4, col5 = st.columns(5)
-with col1: price1 = st.number_input("Price 1", value=86.23)
-with col2: price2 = st.number_input("Price 2", value=86.54)
-with col3: price3 = st.number_input("Price 3", value=86.90)
-with col4: price4 = st.number_input("Price 4", value=87.20)
-with col5: price5 = st.number_input("Price 5", value=86.63)
+with col1: price1 = st.number_input("Day 1", value=86.23)
+with col2: price2 = st.number_input("Day 2", value=86.54)
+with col3: price3 = st.number_input("Day 3", value=86.90)
+with col4: price4 = st.number_input("Day 4", value=87.20)
+with col5: price5 = st.number_input("Day 5", value=86.63)
 
 # Prediction section
 if st.button("Predict Next Closing Price"):
